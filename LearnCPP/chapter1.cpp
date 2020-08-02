@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -44,7 +45,9 @@ inline void initialization() {
     string h;
     cout << c << ',' << d << ','<< f << ','<< g << ','<< h << endl;
     // output; some int, some bool, some double, '', ""
-    
+        
+    string name = "deniz"; // copy initialization, copies right to left
+    string surname {"saglam"}; // direct initialization
 }
 
 inline int reused = 42; // reused has global scope
@@ -70,6 +73,12 @@ inline void references(){
 //    int& ref; // error
 //    int& ref2 = 10; // error: initializer must be an object
     
+    // however, const references can be initialized to a const
+    const int& cref = 12;
+    const int& cref2 = 2*x;
+    cout << "const ref:" << cref << endl;
+    cout << "const ref2:" << cref2 << endl;
+    
     // when a reference is assigned to another variable
     // its value is copied, not itself
     // therefore, in below, original x does not change
@@ -83,6 +92,11 @@ inline void references(){
     int& ref = a;
     ref = b; // it does not refer b, it just assigns value of b to a
     cout << "ref:" << ref << " a:" << a << " b:" << b << endl;
+    
+    // since const variables cannot change, a const reference can refer to a different type
+    double pi = 3.14;
+    const int& pi3 = pi; // this first converts double to int, then binds to reference
+    cout << "pi3:" << pi3 << endl;
     
 }
 
@@ -166,6 +180,64 @@ inline void pointers_references(){
     if(pc==refp){
         cout << "pc==refp" << endl;
     }
+}
+
+inline void const_qualifier() {
+    // const qualifier is distributive
+    const int x = 1, y = 2;
+//    y = 3; // error
+    
+    // low-level const
+    // a pointer to const object, pointer is not const
+    const double pi = 3.14;
+//    double* ptr = pi; // error: need a pointer-to-const
+    const double* ptrc = &pi;
+//    *ptrc = 3.0; // error: a pointer-to-const cannot change the value of object
+    const double tao = 2*pi;
+    ptrc = &tao; // legal: can change pointer-to-const to point another const object
+    cout << "*ptrc:" << *ptrc << endl;
+    
+    // a const pointer, top-level const
+    int a = 1;
+    int b = 2;
+    int* const pa = &a; // a const pointer to nonconst object
+//    pa = &b; // error: a const pointer cannot change
+    // but it can change the value of nonconst obj
+    *pa = 3;
+    cout << "a:" << a << endl;
+    
+    const double* const cptr = &pi; // a const pointer to const object
+//    cptr = &tao; // error: a const pointer cannot be changed to point another object
+    
+}
+
+inline void type_alias(){
+    typedef int age;
+    typedef age* pointer;
+    
+    age bds = 12;
+    pointer ptr = &bds;
+    
+    cout << "*ptr: " << *ptr << endl;
+    
+    // or using
+    using TL = double;
+    TL price = .99;
+    cout << "price:" << price << endl;
+    
+    // compound type aliases
+    typedef char *pstring;
+    const pstring cstr = 0; // cstr is a constant pointer to char
+//    const char* cstr = 0; // wrong interpretation of const pstring cstr
+    const pstring *ps; // ps is a pointer to a constant pointer to char
+}
+
+inline void auto_qualifier(){
+    int i = 0, &r = i;
+    const int ci = i, &cr = ci;
+    auto b = ci; // b is an int (top-level const in ci is dropped)
+    auto c = cr; // c is an int (cr is an alias for ci whose const is top-level) auto d = &i; // dis anint*(&of anintobject isint*)
+    auto e = &ci; // e is const int* (& of a const object is low-level const)
 }
 
 
