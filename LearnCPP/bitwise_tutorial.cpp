@@ -15,6 +15,8 @@ using namespace std;
 namespace bitwise_tutorial {
 
 void testBitwise(){
+    int a = (1 << 8); // 2**8
+    
     int imin = numeric_limits<int>::min();
     int imax = numeric_limits<int>::max();
     

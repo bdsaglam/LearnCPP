@@ -14,7 +14,7 @@ using namespace std;
 
 namespace chapter1 {
 
-inline void initialization() {
+void initialization() {
     // multiple init in one line
     // x, y, z are int
     // y is initialized to a undefined value;
@@ -30,7 +30,7 @@ inline void initialization() {
     int p {1}, q = {2};
     cout << p << q << endl;
     
-    // paranthesis initialization, auto converts
+    // direct initialization, auto converts
     int a(1.1), b = (3.2);
     cout << a << b << endl;
     
@@ -47,11 +47,11 @@ inline void initialization() {
     // output; some int, some bool, some double, '', ""
         
     string name = "deniz"; // copy initialization, copies right to left
-    string surname {"saglam"}; // direct initialization
+    string surname {"saglam"}; // list initialization
 }
 
 inline int reused = 42; // reused has global scope
-inline void scopes() {
+void scopes() {
     int unique = 0; // unique has block scope
     std::cout << reused << " " << unique << std::endl; // 42 0
     
@@ -59,7 +59,7 @@ inline void scopes() {
     std::cout << reused << " " << unique << std::endl; // 24 0
 }
 
-inline void references(){
+void references() {
     // a reference is just another name for the variable
     int x = 1;
     int& x_ref = x;
@@ -73,11 +73,14 @@ inline void references(){
 //    int& ref; // error
 //    int& ref2 = 10; // error: initializer must be an object
     
-    // however, const references can be initialized to a const
-    const int& cref = 12;
-    const int& cref2 = 2*x;
-    cout << "const ref:" << cref << endl;
-    cout << "const ref2:" << cref2 << endl;
+    {// however, const references can be initialized to a const and literal
+        int a = 1;
+        const int& cref = 0;
+        const int& cref2 = 2*a; // copies value of 2*a to cref2
+        a = 3; // cref2 = 2 still
+        cout << "const ref: " << cref << endl;
+        cout << "const ref2: " << cref2 << endl;
+    }
     
     // when a reference is assigned to another variable
     // its value is copied, not itself
@@ -95,12 +98,13 @@ inline void references(){
     
     // since const variables cannot change, a const reference can refer to a different type
     double pi = 3.14;
+//    int& piref = pi; // error
     const int& pi3 = pi; // this first converts double to int, then binds to reference
     cout << "pi3:" << pi3 << endl;
     
 }
 
-inline void pointers(){
+void pointers() {
     // a pointer is an object that provides indirect access to another object
     int x = 1;
     int* p = &x; // here & is adress operator
@@ -156,9 +160,23 @@ inline void pointers(){
     if (zp) {
         cout << "never reaches here" << endl;
     }
+    
+    {// pointer arithmetic
+        int* p1 = nullptr;
+        int x = 1;
+        int* p2 = &x;
+        cout << p2 << endl;
+        cout << p2-p1 << endl;
+        
+        constexpr size_t dp = 3;
+        int* pb = nullptr;
+        int* pe = pb + dp;
+        cout << pe << endl;
+        cout << pe-pb << endl;
+    }
 }
 
-inline void pointers_references(){
+void pointers_references() {
     // a pointer may point to another pointer
     int a = 1;
     int* p = &a;
@@ -173,16 +191,15 @@ inline void pointers_references(){
     // but a reference may refer to a pointer
     int c = 3;
     int* pc = &c;
-    int*& refp = pc;
-    // read compound type from right to left, a reference to a pointer
+    int*& refp = pc; // read compound types from right to left, a reference to a pointer
     
     cout << "c:" << c << " pc:" << pc << " refp:" << refp << endl;
-    if(pc==refp){
+    if(pc==refp) {
         cout << "pc==refp" << endl;
     }
 }
 
-inline void const_qualifier() {
+void const_qualifier() {
     // const qualifier is distributive
     const int x = 1, y = 2;
 //    y = 3; // error
@@ -211,7 +228,7 @@ inline void const_qualifier() {
     
 }
 
-inline void type_alias(){
+void type_alias() {
     typedef int age;
     typedef age* pointer;
     
@@ -232,11 +249,12 @@ inline void type_alias(){
     const pstring *ps; // ps is a pointer to a constant pointer to char
 }
 
-inline void auto_qualifier(){
+void auto_qualifier() {
     int i = 0, &r = i;
     const int ci = i, &cr = ci;
     auto b = ci; // b is an int (top-level const in ci is dropped)
-    auto c = cr; // c is an int (cr is an alias for ci whose const is top-level) auto d = &i; // dis anint*(&of anintobject isint*)
+    auto c = cr; // c is an int (cr is an alias for ci whose const is top-level)
+    auto d = &i; // d is an int*(&of an int object is int*)
     auto e = &ci; // e is const int* (& of a const object is low-level const)
 }
 

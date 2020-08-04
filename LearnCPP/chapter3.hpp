@@ -17,6 +17,7 @@ namespace chapter3 {
 template<typename T>
 void print_vector(const std::vector<T>&);
 
+
 template<typename T>
 bool binary_search(const std::vector<T>&, const T&);
 
@@ -32,6 +33,7 @@ template <typename T, std::size_t S>
 void print_array(T arr[S]);
 
 void test_array();
+void test_cstrings();
 
 }
 

@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3FF470C224D48EDB00A89973 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470C124D48EDB00A89973 /* main.cpp */; };
-		3FF470C924D48EF100A89973 /* chapter1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470C824D48EF100A89973 /* chapter1.cpp */; };
 		3FF470CC24D5884000A89973 /* chapter2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470CA24D5884000A89973 /* chapter2.cpp */; };
 		3FF470CF24D5E10B00A89973 /* chapter3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470CD24D5E10B00A89973 /* chapter3.cpp */; };
 		3FF470D224D5FA0600A89973 /* bitwise_tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470D024D5FA0600A89973 /* bitwise_tutorial.cpp */; };
+		3FF470D824D9103C00A89973 /* chapter1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470D624D9103C00A89973 /* chapter1.cpp */; };
+		3FF470DB24D94D2500A89973 /* chapter4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470D924D94D2500A89973 /* chapter4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,13 +30,16 @@
 /* Begin PBXFileReference section */
 		3FF470BE24D48EDB00A89973 /* LearnCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LearnCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF470C124D48EDB00A89973 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3FF470C824D48EF100A89973 /* chapter1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chapter1.cpp; sourceTree = "<group>"; };
 		3FF470CA24D5884000A89973 /* chapter2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chapter2.cpp; sourceTree = "<group>"; };
 		3FF470CB24D5884000A89973 /* chapter2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chapter2.hpp; sourceTree = "<group>"; };
 		3FF470CD24D5E10B00A89973 /* chapter3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chapter3.cpp; sourceTree = "<group>"; };
 		3FF470CE24D5E10B00A89973 /* chapter3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chapter3.hpp; sourceTree = "<group>"; };
 		3FF470D024D5FA0600A89973 /* bitwise_tutorial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bitwise_tutorial.cpp; sourceTree = "<group>"; };
 		3FF470D124D5FA0600A89973 /* bitwise_tutorial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = bitwise_tutorial.hpp; sourceTree = "<group>"; };
+		3FF470D624D9103C00A89973 /* chapter1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chapter1.cpp; sourceTree = "<group>"; };
+		3FF470D724D9103C00A89973 /* chapter1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chapter1.hpp; sourceTree = "<group>"; };
+		3FF470D924D94D2500A89973 /* chapter4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chapter4.cpp; sourceTree = "<group>"; };
+		3FF470DA24D94D2500A89973 /* chapter4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chapter4.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,15 @@
 			isa = PBXGroup;
 			children = (
 				3FF470C124D48EDB00A89973 /* main.cpp */,
-				3FF470C824D48EF100A89973 /* chapter1.cpp */,
+				3FF470D624D9103C00A89973 /* chapter1.cpp */,
+				3FF470D724D9103C00A89973 /* chapter1.hpp */,
 				3FF470CA24D5884000A89973 /* chapter2.cpp */,
 				3FF470CB24D5884000A89973 /* chapter2.hpp */,
 				3FF470CD24D5E10B00A89973 /* chapter3.cpp */,
 				3FF470CE24D5E10B00A89973 /* chapter3.hpp */,
 				3FF470D024D5FA0600A89973 /* bitwise_tutorial.cpp */,
+				3FF470D924D94D2500A89973 /* chapter4.cpp */,
+				3FF470DA24D94D2500A89973 /* chapter4.hpp */,
 				3FF470D124D5FA0600A89973 /* bitwise_tutorial.hpp */,
 			);
 			path = LearnCPP;
@@ -139,8 +146,9 @@
 			files = (
 				3FF470C224D48EDB00A89973 /* main.cpp in Sources */,
 				3FF470CC24D5884000A89973 /* chapter2.cpp in Sources */,
-				3FF470C924D48EF100A89973 /* chapter1.cpp in Sources */,
+				3FF470D824D9103C00A89973 /* chapter1.cpp in Sources */,
 				3FF470CF24D5E10B00A89973 /* chapter3.cpp in Sources */,
+				3FF470DB24D94D2500A89973 /* chapter4.cpp in Sources */,
 				3FF470D224D5FA0600A89973 /* bitwise_tutorial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

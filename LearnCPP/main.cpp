@@ -8,9 +8,10 @@
 
 #include <iostream>
 
-#include "chapter1.cpp"
+#include "chapter1.hpp"
 #include "chapter2.hpp"
 #include "chapter3.hpp"
+#include "chapter4.hpp"
 #include "bitwise_tutorial.hpp"
 
 using namespace std;
@@ -23,6 +24,8 @@ int main(int argc, const char * argv[]) {
 //    cout << global_string << endl; // ""
 //    cerr << "I just wanted to write to stderr" << endl;
     
+//    bitwise_tutorial::testBitwise();
+    
 //    chapter1::initialization();
 //    chapter1::scopes();
 //    chapter1::references();
@@ -30,19 +33,19 @@ int main(int argc, const char * argv[]) {
 //    chapter1::pointers_references();
 //    chapter1::const_qualifier();
 //    chapter1::type_alias();
-    
+        
 //    chapter2::testCount();
 //    chapter2::testToBinary();
     
 //    chapter3::test_string();
 //    chapter3::test_iostream();
-
 //    chapter3::test_vector();
 //    chapter3::test_iterators();
-    chapter3::test_array();
+//    chapter3::test_array();
+//    chapter3::test_cstrings();
     
-//    bitwise_tutorial::testBitwise();
-    
+    chapter4::test_precedence();
+
     cout << endl;
     return 0;
 }
