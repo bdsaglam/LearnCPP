@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FAC83D424DAA484004B39C8 /* extensions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC83D224DAA484004B39C8 /* extensions.cpp */; };
+		3FAC83D724DB231B004B39C8 /* sorting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC83D524DB231B004B39C8 /* sorting.cpp */; };
 		3FF470C224D48EDB00A89973 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470C124D48EDB00A89973 /* main.cpp */; };
 		3FF470CC24D5884000A89973 /* chapter2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470CA24D5884000A89973 /* chapter2.cpp */; };
 		3FF470CF24D5E10B00A89973 /* chapter3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FF470CD24D5E10B00A89973 /* chapter3.cpp */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		3FAC83D224DAA484004B39C8 /* extensions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = extensions.cpp; sourceTree = "<group>"; };
 		3FAC83D324DAA484004B39C8 /* extensions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = extensions.hpp; sourceTree = "<group>"; };
+		3FAC83D524DB231B004B39C8 /* sorting.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sorting.cpp; sourceTree = "<group>"; };
+		3FAC83D624DB231B004B39C8 /* sorting.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sorting.hpp; sourceTree = "<group>"; };
 		3FF470BE24D48EDB00A89973 /* LearnCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LearnCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF470C124D48EDB00A89973 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3FF470CA24D5884000A89973 /* chapter2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chapter2.cpp; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				3FAC83D324DAA484004B39C8 /* extensions.hpp */,
 				3FF4711424DA9B8D00A89973 /* utils.cpp */,
 				3FF4711524DA9B8D00A89973 /* utils.hpp */,
+				3FAC83D524DB231B004B39C8 /* sorting.cpp */,
+				3FAC83D624DB231B004B39C8 /* sorting.hpp */,
 				3FF470D624D9103C00A89973 /* chapter1.cpp */,
 				3FF470D724D9103C00A89973 /* chapter1.hpp */,
 				3FF470CA24D5884000A89973 /* chapter2.cpp */,
@@ -167,6 +172,7 @@
 				3FF470CF24D5E10B00A89973 /* chapter3.cpp in Sources */,
 				3FF470DB24D94D2500A89973 /* chapter4.cpp in Sources */,
 				3FF470DE24D9AF2D00A89973 /* chapter6.cpp in Sources */,
+				3FAC83D724DB231B004B39C8 /* sorting.cpp in Sources */,
 				3FF470D224D5FA0600A89973 /* bitwise_tutorial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

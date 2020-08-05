@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "extensions.hpp"
 
 using namespace std;
 
@@ -54,7 +55,6 @@ bool isShorter(const string &s1, const string &s2) {
 // we need additional information about bounds of array
 // we can either pass size of the array as another argument
 // or we can pass begin and end pointers of array to the function as std
-
 void print(int* beg, int* end){
     while (beg!=end) {
         cout << *beg << " ";
@@ -79,7 +79,7 @@ const string& manip() {
     if (!ret.empty())
         return ret; // WRONG: returning a reference to a local object!
     else
-        return"Empty";// WRONG:"Empty"isalocaltemporarystring
+        return "Empty";// WRONG:"Empty"isalocaltemporarystring
 }
 
 // we can return a reference to a non-local object
@@ -109,6 +109,7 @@ IAP* square(IAP* parr) {
     return parr;
 }
 
+// or with new arrow syntax for return type
 auto square2(int (*parr)[3]) -> int(*)[3]{
     int* pb = begin(*parr);
     int* pe = end(*parr);
@@ -119,20 +120,34 @@ auto square2(int (*parr)[3]) -> int(*)[3]{
     return parr;
 }
 
-using icomparator = bool (int, int);
+// function pointers
+using comparator = bool (const int&, const int&);
 
-void insertion_sort(vector<int> vec, icomparator* compare){
+bool smaller_than(const int& first, const int& second) {
+    return first < second;
+}
+
+bool greater_then(const int& first, const int& second){
+    return first > second;
+}
+
+// function parameters automatically passed by pointer
+// so no need for explicitly stating that
+void sort_by(vector<int>& vec, comparator f = smaller_than){
     for (int i = 1; i != vec.size(); ++i) {
-        int& current = vec[i];
+        int k = i;
         for (int j = i-1; j != -1; --j) {
-            if (current < vec[j]) {
-                swap(current, vec[j]);
+            if (f(vec[k], vec[j])) {
+                swap(vec[k], vec[j]);
+                --k;
+            } else {
+                break;
             }
-            
         }
     }
 }
 
+//
 void test_functions() {
     {// default parameters
         int n = 12;
@@ -184,6 +199,12 @@ void test_functions() {
         int (*parr)[3] = &arr;
         auto pres = square2(parr);
         print(begin(*pres), end(*pres));
+    }
+    
+    {// pointer-to-function
+        vector<int> scores {1, 2, 0, -1, 4, 3, 4, 1, -2};
+        sort_by(scores, greater_then);
+        cout << scores << endl;
     }
 }
 

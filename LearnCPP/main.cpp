@@ -11,6 +11,7 @@
 
 #include "extensions.hpp"
 #include "utils.hpp"
+#include "sorting.hpp"
 #include "chapter1.hpp"
 #include "chapter2.hpp"
 #include "chapter3.hpp"
@@ -53,31 +54,8 @@ int main(int argc, const char * argv[]) {
     
 //    chapter6::test_functions();
     
-    vector<int> vec {1,2,3};
-    cout << vec << endl;
     
-    cout << "Baris Deniz" << endl;
-    
-    int nums[] {1,2,3};
-    cout << nums << endl;
-    utils::write(cout, nums);
-    
-    char letters[] = "The Office";
-    cout << letters << endl;
-    
-    string best_boss = "Michael Scott";
-    cout << best_boss << endl;
-    
-    
-//    int& a = vec[0];
-//    int& b = vec[1];
-//    swap(a, b);
-
-//    int x = 1;
-//    utils::print(x);
-    
-//    utils::print({1,2,3,4});
-    
+    test_insertion_sort();
     
     cout << endl;
     return 0;

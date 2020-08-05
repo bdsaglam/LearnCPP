@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "utils.hpp"
 
 using namespace std;
 
@@ -176,7 +177,13 @@ void test_vector() {
         vector<int> digits{0,1,2,3,4,5,6,7,8,9};
         cout << digits[0] << endl;
         cout << digits[-2] << endl; // no error but no negative indexing like Python
+            
+        // indexing gives references
+        int& a = digits[0];
+        int& b = digits[1];
+        swap(a, b);
     }
+    
     
 }
 
@@ -319,6 +326,35 @@ void test_array() {
         }
         cout << endl;
     }
+    {// array indexing
+        {
+            // here first and second are just copies
+            // so swapping them won't change array
+            int arr[] {2,3,1};
+            
+            int first = arr[0];
+            int second = arr[1];
+            cout << first << ' ' << second << endl; // 2 3
+            swap(first, second);
+            cout << first << ' ' << second << endl; // 3 2
+            utils::write(cout, arr); // 2,3,1
+            cout << endl;
+        }
+        
+        {
+            // here first and second are pointers to array elements
+            // hence, swapping them change array
+            int arr[] {2,3,1};
+            
+            int* first = &arr[0];
+            int* second = &arr[1];
+            cout << *first << ' ' << *second << endl; // 2 3
+            swap(*first, *second);
+            cout << *first << ' ' << *second << endl; // 3 2
+            utils::write(cout, arr); // 3 2 1
+            cout << endl;
+        }
+    }
     
     {// array pointer
         cout << endl << "## Array pointer" << endl;
@@ -338,7 +374,7 @@ void test_array() {
         cout << pe[-1] << endl; // yields last element as in Python
     }
     
-    {//iterating arrays with pointers
+    {// iterating arrays with pointers
         cout << endl << "## Iterating arrays with pointers" << endl;
         
         int arr[] = {0,1,2,3,4,5,6,7,8,9};
@@ -477,8 +513,6 @@ void test_cstrings() {
         const char* cs = s.c_str(); // have to be const
         cout << cs << endl;
     }
-    
-    
     
 }
 

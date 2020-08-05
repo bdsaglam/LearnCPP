@@ -13,7 +13,6 @@
 
 namespace chapter6 {
 void test_functions();
-
 }
 
 #endif /* chapter6_hpp */

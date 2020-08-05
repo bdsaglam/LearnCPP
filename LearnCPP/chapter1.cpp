@@ -132,7 +132,8 @@ void pointers() {
     cout << "y:" << y << endl;
     cout << "z:" << z << endl;
     
-    // change the value object a pointer pointing
+    // dereferencing gives a reference to object
+    // so we can change the value of object
     *p = 2;
     cout << "x:" << z << endl;
     
