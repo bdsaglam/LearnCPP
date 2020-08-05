@@ -11,9 +11,9 @@
 
 #include <stdio.h>
 
-namespace chapter4{
+namespace chapter4 {
 void test_precedence();
-
+void test_casting();
 
 }
 

@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -24,6 +25,8 @@ void initialization() {
     // auto conversion
     int pi = 3.14; // becomes 3
     cout << pi << endl;
+    int i = 1.5 + 0.5; // first evaluate right hand size, then assign
+    cout << "int i = 1.5 + 0.5 >> " << i << endl;
     
     // list initialization do not auto convert
 //    int ee {2.71}; // error
@@ -102,6 +105,17 @@ void references() {
     const int& pi3 = pi; // this first converts double to int, then binds to reference
     cout << "pi3:" << pi3 << endl;
     
+    {
+        vector<string> names = {"baris", "deniz", "saglam"};
+        // the loop creates copy of each element, slow
+        for (const auto s : names) {
+            cout << s << endl;
+        }
+        // the loop gets a reference for each element, fast
+        for (const auto& s : names) {
+            cout << s << endl;
+        }
+    }
 }
 
 void pointers() {

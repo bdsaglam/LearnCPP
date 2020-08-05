@@ -18,15 +18,15 @@ namespace chapter2 {
 
 int count(const vector<int>& v, int value) {
     int c = 0;
-    for (int elem : v) {
+    for (const int& elem : v) {
         if (elem==value) c++;
     }
     return c;
 }
 
 vector<int> toBinary(int n) {
-    vector<int> bits(64);
-    int index = 63;
+    vector<int> bits(32);
+    int index = 31;
     while (n) {
         int bit = n % 2;
         bits[index] = bit;
@@ -53,7 +53,7 @@ void testToBinary(){
     
     vector<int> actual = toBinary(n);
     assert(actual==expected);
-    for (auto d: actual) {
+    for (auto& d: actual) {
         cout << d;
     }
     cout << endl;

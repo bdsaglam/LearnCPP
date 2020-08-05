@@ -17,7 +17,7 @@ namespace chapter3 {
 
 template<typename T>
 void print_vector(const vector<T>& vec) {
-    for(auto elem: vec) {
+    for(auto& elem: vec) {
         cout << elem << ' ';
     }
     cout << endl;
