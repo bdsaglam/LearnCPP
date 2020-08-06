@@ -26,7 +26,7 @@ void test_extensions() {
     
     int nums[] {1,2,3};
     cout << nums << endl;
-    utils::write(cout, nums);
+    utils::print(cout, nums);
     
     char letters[] = "The Office";
     cout << letters << endl;

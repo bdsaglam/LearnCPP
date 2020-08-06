@@ -12,12 +12,14 @@
 #include "extensions.hpp"
 #include "utils.hpp"
 #include "sorting.hpp"
+#include "bitwise_tutorial.hpp"
 #include "chapter1.hpp"
 #include "chapter2.hpp"
 #include "chapter3.hpp"
 #include "chapter4.hpp"
 #include "chapter6.hpp"
-#include "bitwise_tutorial.hpp"
+#include "chapter7.hpp"
+#include "Screen.hpp"
 
 using namespace std;
     
@@ -30,6 +32,7 @@ int main(int argc, const char * argv[]) {
 //    cerr << "I just wanted to write to stderr" << endl;
     
 //    bitwise_tutorial::testBitwise();
+//    test_insertion_sort();
     
 //    chapter1::initialization();
 //    chapter1::scopes();
@@ -38,6 +41,7 @@ int main(int argc, const char * argv[]) {
 //    chapter1::pointers_references();
 //    chapter1::const_qualifier();
 //    chapter1::type_alias();
+//    chapter1::sizes_of_types();
         
 //    chapter2::testCount();
 //    chapter2::testToBinary();
@@ -54,9 +58,12 @@ int main(int argc, const char * argv[]) {
     
 //    chapter6::test_functions();
     
+//    chapter7::test_structs();
+//    chapter7::test_sale_class();
     
-    test_insertion_sort();
+    test_screen();
     
+
     cout << endl;
     return 0;
 }

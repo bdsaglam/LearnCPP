@@ -18,13 +18,13 @@
 
 template <typename T>
 std::ostream& operator<<(std::ostream& strm, const std::vector<T>& vec) {
-    utils::write(strm, vec.begin(), vec.end(), "<", ", ", ">");
+    utils::print(strm, vec.begin(), vec.end(), "<", ", ", ">");
     return strm;
 }
 
 template <std::size_t S, typename T, std::is_same<T, char> = 0, std::is_same<T, std::string> = 0>
 std::ostream& operator<<(std::ostream& strm, T (&arr)[S]) {
-    utils::write(strm, std::begin(arr), std::end(arr), "[", ", ", "]");
+    utils::print(strm, std::begin(arr), std::end(arr), "[", ", ", "]");
     return strm;
 }
 
@@ -35,7 +35,7 @@ std::ostream& operator<<(std::ostream& strm, T (&arr)[S]) {
 
 //template <std::size_t S, typename T, NotDuplicate<T> = 0 >
 //std::ostream& operator<<(std::ostream &strm, T (&arr)[S]) {
-//    utils::write(strm, std::begin(arr), std::end(arr), "[", ", ", "]");
+//    utils::print(strm, std::begin(arr), std::end(arr), "[", ", ", "]");
 //    return strm;
 //}
 

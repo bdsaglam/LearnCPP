@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "utils.hpp"
 
 using namespace std;
 
@@ -273,6 +274,29 @@ void auto_qualifier() {
     auto e = &ci; // e is const int* (& of a const object is low-level const)
 }
 
+
+void sizes_of_types() {
+    // int is 4 bytes
+    cout << 1 << ": " << sizeof(1) << " bytes" << endl; // 4
+    
+    // size of an array is sum of each element's size
+    int y[] {1,2,3,4};
+    utils::print(cout, y);
+    cout << endl;
+    cout << sizeof(y) << endl; // 16
+    
+    // size of a string is 24 bytes
+    // since a string is a pointer to underlying char array
+    string s {"asdasdasdasdsadasdsadasdasd"};
+    cout << s << " " << sizeof(s) << " bytes" << endl;
+    
+    string x[] = {"aasd", "asdasdasdsad", "a"};
+    utils::print(cout, x);
+    cout << endl;
+    cout << sizeof(x) << endl; // 72
+    cout << sizeof(x[0]) << endl; // 24
+
+}
 
 }
 

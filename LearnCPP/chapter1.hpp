@@ -23,6 +23,7 @@ void pointers_references();
 void const_qualifier();
 void type_alias();
 void auto_qualifier();
+void sizes_of_types();
 
 }
 #endif /* chapter1_hpp */

@@ -337,7 +337,7 @@ void test_array() {
             cout << first << ' ' << second << endl; // 2 3
             swap(first, second);
             cout << first << ' ' << second << endl; // 3 2
-            utils::write(cout, arr); // 2,3,1
+            utils::print(cout, arr); // 2,3,1
             cout << endl;
         }
         
@@ -351,7 +351,7 @@ void test_array() {
             cout << *first << ' ' << *second << endl; // 2 3
             swap(*first, *second);
             cout << *first << ' ' << *second << endl; // 3 2
-            utils::write(cout, arr); // 3 2 1
+            utils::print(cout, arr); // 3 2 1
             cout << endl;
         }
     }
@@ -469,6 +469,15 @@ void test_array() {
         row2[2] = -1;
         print_array(row2);
         
+    }
+    
+    {// empty array
+        int arr[0];
+    
+        int* ptr = &arr[0];
+        cout << ptr << ' ' << *ptr << endl;
+        cout << sizeof(arr) << endl;
+        cout << sizeof(ptr) << endl;
     }
 }
 

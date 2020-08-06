@@ -16,7 +16,7 @@
 namespace utils {
 
 template<typename Iter>
-std::ostream& write(std::ostream &strm,
+std::ostream& print(std::ostream &strm,
                     Iter pbegin,
                     Iter pend,
                     const std::string& prefix="",
@@ -35,23 +35,23 @@ std::ostream& write(std::ostream &strm,
 }
 
 template<typename T>
-std::ostream& write(std::ostream& strm,
+std::ostream& print(std::ostream& strm,
                     std::initializer_list<T> args,
                     const std::string& prefix="",
                     const std::string& sep=" ",
                     const std::string& suffix="") {
     
-    return write(strm, args.begin(), args.end(), prefix, sep, suffix);
+    return print(strm, args.begin(), args.end(), prefix, sep, suffix);
 }
 
 template<typename T, std::size_t S>
-std::ostream& write(std::ostream &strm,
+std::ostream& print(std::ostream &strm,
                     T (&arr)[S],
                     const std::string& prefix="",
                     const std::string& sep=" ",
                     const std::string& suffix="") {
     
-    return write(strm, std::begin(arr), std::end(arr), prefix, sep, suffix);
+    return print(strm, std::begin(arr), std::end(arr), prefix, sep, suffix);
 }
 
 }
